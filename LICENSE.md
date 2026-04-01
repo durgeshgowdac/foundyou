@@ -76,7 +76,7 @@ model of the intended use.
 To inquire about a Commercial License, contact:
 
     Durgesh Gowda C
-    email: durgeshcgowda@gmail.com
+    Reach out: durgeshcgowda@gmail.com
     GitHub: https://github.com/durgeshgowdac
 
 The Licensor reserves the right to refuse any commercial licensing request.
