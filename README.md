@@ -3,6 +3,7 @@
 Real-time person re-identification across multiple cameras. Each person receives a persistent global ID that follows them as they move between cameras, leave the frame, and return — surviving camera switches, temporary occlusions, and re-entries.
 
 <p align="center" style="background-color:#ffffff; padding: 20px; border-radius: 10px;">
+  <img src="https://github.com/durgeshgowdac/foundyou/blob/main/static/foundyou-preview.png" style="width: 80%; height: auto;">
   <img src="https://github.com/durgeshgowdac/foundyou/blob/main/static/foundyou-flowchart.png" style="width: 50%; height: auto;">
 </p>
 
@@ -419,13 +420,6 @@ When a person first appears, their gallery has fewer than `MIN_PROBES_TO_MATCH` 
 | Step breakdown | `resolve_step_breakdown()` | Fraction of resolves via Step A / B / C |
 | Merge effectiveness | `merge_effectiveness()` | Merges fired vs fragmentations corrected |
 | Throughput | `throughput()` | Detections and resolves per second |
-
----
-## Preview
-
-<p align="center" style="background-color:#ffffff; padding: 20px; border-radius: 10px;">
-  <img src="https://github.com/durgeshgowdac/foundyou/blob/main/static/foundyou-preview.png" style="width: 80%; height: auto;">
-</p>
 
 ---
 
