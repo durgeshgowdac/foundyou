@@ -1,52 +1,38 @@
 version = 1
 
-# ========================
-# 1. File Patterning
-# ========================
-exclude_patterns = [
-    "__pycache__/",
-    "static/",
-    "Screenshots/",
-    "recordings/",
-    ".venv/",
-    "venv/",
-    "*.log",
-    "*.pkl",
-    "*.faiss",
-    "*.pt",          # PyTorch model weights
-    "*.onnx",        # ONNX models
-    "*.pb",          # Protocol buffer models
-]
-
 test_patterns = ["tests.py"]
 
-# ========================
-# 2. Core Analyzers
-# ========================
+exclude_patterns = [
+  "__pycache__/",
+  "static/",
+  "Screenshots/",
+  "recordings/",
+  ".venv/",
+  "venv/",
+  "*.log",
+  "*.pkl",
+  "*.faiss",
+  "*.pt",
+  "*.onnx",
+  "*.pb"
+]
+
+# Enable the Python analyzer (required for linting)
 [[analyzers]]
 name = "python"
 enabled = true
 
 [analyzers.meta]
-# Align with torch/torchvision compatibility (Python 3.10 is safe)
-runtime_version = "3.10"
+# DeepSource only accepts "3.x.x" or "2.x.x" as runtime version patterns
+runtime_version = "3.x.x"
 max_line_length = 100
 
-# ========================
-# 3. Security & Dependency Scanning
-# ========================
+# Enable secret detection (optional but recommended)
 [[analyzers]]
 name = "secrets"
 enabled = true
 
-[[analyzers]]
-name = "safety"
-enabled = true
-# This will check all packages in your requirements.txt against known vulnerability databases
-
-# ========================
-# 4. Code Formatter (Optional)
-# ========================
-[[transformers]]
+# Use Black to auto-format code on pull requests
+[[code_formatters]]
 name = "black"
 enabled = true
