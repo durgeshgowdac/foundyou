@@ -1,0 +1,52 @@
+version = 1
+
+# ========================
+# 1. File Patterning
+# ========================
+exclude_patterns = [
+    "__pycache__/",
+    "static/",
+    "Screenshots/",
+    "recordings/",
+    ".venv/",
+    "venv/",
+    "*.log",
+    "*.pkl",
+    "*.faiss",
+    "*.pt",          # PyTorch model weights
+    "*.onnx",        # ONNX models
+    "*.pb",          # Protocol buffer models
+]
+
+test_patterns = ["tests.py"]
+
+# ========================
+# 2. Core Analyzers
+# ========================
+[[analyzers]]
+name = "python"
+enabled = true
+
+[analyzers.meta]
+# Align with torch/torchvision compatibility (Python 3.10 is safe)
+runtime_version = "3.10"
+max_line_length = 100
+
+# ========================
+# 3. Security & Dependency Scanning
+# ========================
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+[[analyzers]]
+name = "safety"
+enabled = true
+# This will check all packages in your requirements.txt against known vulnerability databases
+
+# ========================
+# 4. Code Formatter (Optional)
+# ========================
+[[transformers]]
+name = "black"
+enabled = true
